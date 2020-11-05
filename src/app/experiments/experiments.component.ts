@@ -14,4 +14,8 @@ export class ExperimentsComponent implements OnInit {
   ngOnInit() {
   }
 
+  add(experimentName: string) {
+    this.experiments.push(experimentName);
+  }
+
 }

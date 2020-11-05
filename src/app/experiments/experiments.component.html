@@ -1,4 +1,9 @@
 <h3>Experiments</h3>
+
 <ul>
   <li *ngFor="let experiment of experiments">{{experiment}}</li>
 </ul>
+
+<input #experiment type="text">
+
+<button (click)="add(experiment.value)">Add</button>
