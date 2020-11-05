@@ -1,7 +1,10 @@
 <h3>Experiments</h3>
 
 <ul>
-  <li *ngFor="let experiment of experiments">{{experiment}}</li>
+  <li *ngFor="let experiment of experiments">
+    {{experiment}}
+    <button (click)="remove(experiment)">remove</button>
+  </li>
 </ul>
 
 <input #experiment type="text">

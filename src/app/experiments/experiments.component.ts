@@ -14,8 +14,13 @@ export class ExperimentsComponent implements OnInit {
   ngOnInit() {
   }
 
-  add(experimentName: string) {
-    this.experiments.push(experimentName);
+  add(experiment: string) {
+    this.experiments.push(experiment);
+  }
+
+  remove(experiment: string) {
+    let index = this.experiments.indexOf(experiment);
+    this.experiments.splice(index, 1);
   }
 
 }
