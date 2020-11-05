@@ -16,7 +16,11 @@ export class ExperimentsComponent implements OnInit {
   }
 
   add(experiment: string) {
-    this.experiments.push(experiment);
+    if (!this.listItemExists(experiment)) {
+      this.experiments.push(experiment);
+    } else {
+      alert('Experiment already exists');
+    }
   }
 
   edit(experiment: string) {
@@ -29,9 +33,23 @@ export class ExperimentsComponent implements OnInit {
   }
 
   save(newExperiment: string, experiment: string) {
-    let index = this.experiments.indexOf(experiment);
-    this.experiments.splice(index, 1, newExperiment);
-    this.experimentBeingEdited = null;
+    if (!this.listItemExists(newExperiment)) {
+      let index = this.experiments.indexOf(experiment);
+      this.experiments.splice(index, 1, newExperiment);
+      this.experimentBeingEdited = null;
+    } else {
+      alert('Experiment already exists');
+    }
   }
 
+  listItemExists(listItem: string) {
+    let found = false;
+    for (let currentExperiment of this.experiments) {
+      if (currentExperiment === listItem) {
+        found = true;
+        break;
+      }
+    }
+    return found;
+  }
 }
