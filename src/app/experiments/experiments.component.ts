@@ -6,10 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiments.component.css']
 })
 export class ExperimentsComponent implements OnInit {
-   experiments: string[] = ['Moon soil sample', 'Plant growth in orbit', 'Human bone density changes', 'Water droplet podcast for grades K-5', 'Satellite launch'];
+    tests: string[] = [];
+    experiments: string[] = ['Moon soil sample', 'Plant growth in orbit', 'Human bone density changes', 'Water droplet podcast for grades K-5', 'Satellite launch'];
 
-   constructor() { }
+    constructor() { }
 
-   ngOnInit() { }
+    ngOnInit() { }
+
+    // Code the 'addExperiment' function here:
+    addExperiment(currentExperiment) {
+      let found = false;
+      for (let item of this.tests) {
+        if (item === currentExperiment) {
+          found = true;
+        }
+      }
+
+      if (this.tests.length < 3 && !found) {
+        this.tests.push(currentExperiment);
+      } else if (found) {
+        this.tests.splice(this.tests.indexOf(currentExperiment), 1);
+      }
+    }
 
 }

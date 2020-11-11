@@ -1,7 +1,16 @@
 <div class="displayBox">
     <h3>Possible Experiments</h3>
     <ul>
-      <li *ngFor="let experiment of experiments">{{experiment}}</li>
+      <li *ngFor="let experiment of experiments" [class.selected]="tests.includes(experiment)" (click)="addExperiment(experiment)">{{experiment}}</li>
     </ul>
 </div>
 <hr>
+<div class="displayBox">
+  <h3>Test List 
+    <!-- Add a span tag here to display 'Full' when the tests reaches 3. -->
+    <span *ngIf="tests.length === 3">Full</span>
+  </h3>
+  <ol>
+    <li *ngFor="let test of tests">{{test}}</li>
+  </ol>
+</div>

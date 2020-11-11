@@ -1,8 +1,17 @@
+li:hover {
+	cursor: pointer;
+}
+
 .displayBox {
-    height: 275px;
-    width: auto;
+	height: 275px;
+	width: auto;
 }
 
 h3 {
-    text-align: center;
+	text-align: center;
+}
+
+/* Add a 'selected' class here to style selected experiments a different color. */
+.selected {
+	color: rgb(28, 164, 173);
 }
