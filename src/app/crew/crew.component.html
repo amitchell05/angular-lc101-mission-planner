@@ -15,4 +15,11 @@
     </ol>
     <!-- Add an img tag here to display astronaut photos. -->
     <img *ngIf="selected" [src]="selected.photo" alt="Astronaut Photo">
+    <p *ngIf="selected">Active: {{selected.active}}</p>
+    <p *ngIf="selected">Hours in space: {{selected.hoursInSpace}}</p>
+    <!-- <ul *ngIf="selected">
+        <li *ngFor="let skill of selected.skills">
+            {{skill}}
+        </li>
+    </ul> -->
 </div>
